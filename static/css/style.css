@@ -1,0 +1,28 @@
+/* Style for the search bar */
+.search-bar {
+    display: flex;
+    align-items: center;
+    background-color: #f2f2f2;
+    border-radius: 25px;
+    padding: 5px;
+}
+
+.search-bar input[type="text"] {
+    border: none;
+    outline: none;
+    background: transparent;
+    padding: 10px;
+    flex-grow: 1;
+}
+
+.search-bar button {
+    border: none;
+    background: none;
+    cursor: pointer;
+    color: #333;
+    padding: 10px;
+}
+
+.search-bar button i {
+    font-size: 18px;
+}
