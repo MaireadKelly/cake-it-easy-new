@@ -10,11 +10,10 @@
         </div>
 
         <!-- Navigation Links in the center -->
-        <nav class="d-flex align-items-center">
+        <nav>
             <ul class="navbar-nav d-flex flex-row">
                 <li class="nav-item">
                     <a href="{% url 'home' %}" class="nav-link">Home</a>
-
                 </li>
                 <li class="nav-item">
                     <a href="#" class="nav-link">Our Story</a>
@@ -26,7 +25,7 @@
         </nav>
 
         <!-- Search bar, Login, and Shopping Cart on the right -->
-        <div class="d-flex align-items-center">
+        <div class="header-right d-flex align-items-center">
             <!-- Search icon -->
             <form class="search-bar" action="/search/" method="get">
                 <input type="text" name="query" placeholder="Search...">
@@ -35,56 +34,21 @@
                 </button>
             </form>
 
-            <!-- Login/Register -->
-            <!-- <div class="me-4">
-                <a href="{% url 'account_login' %}" class="btn btn-outline-primary">Login</a>
-                <a href="{% url 'account_signup' %}" class="btn btn-primary">Register</a>
-            </div> -->
-
+            <!-- Login/Register Links -->
             {% if user.is_authenticated %}
-            <li><a href="{% url 'account_logout' %}">Logout</a></li>
+                <a href="{% url 'account_logout' %}">Logout</a>
             {% else %}
-            <li><a href="{% url 'account_login' %}">Login</a></li>
-            <li><a href="{% url 'account_signup' %}">Register</a></li>
+                <a href="{% url 'account_login' %}">Login</a>
+                <a href="{% url 'account_signup' %}">Register</a>
             {% endif %}
-
 
             <!-- Shopping Cart with total below -->
             <div class="shopping-cart">
                 <a href="#" class="btn btn-outline-secondary position-relative">
                     <i class="bi bi-cart-fill"></i>
-                    <!-- Basket total below the icon -->
                     <span class="basket-total d-block text-center">€0.00</span>
                 </a>
             </div>
         </div>
     </div>
 </header>
-
-
-
-
-
-
-<!-- <header>
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <a class="navbar-brand" href="{% url 'home' %}">Cake It Easy</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav ml-auto">
-                <li class="nav-item">
-                    <a class="nav-link" href="{% url 'shop' %}">Shop</a>
-                </li>
-                <li class="nav-item">
-                    {% if user.is_authenticated %}
-                        <a class="nav-link" href="{% url 'account_logout' %}">Logout</a>
-                    {% else %}
-                        <a class="nav-link" href="{% url 'account_login' %}">Login/Register</a>
-                    {% endif %}
-                </li>
-            </ul>
-        </div>
-    </nav>
-</header> -->

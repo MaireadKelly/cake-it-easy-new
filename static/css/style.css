@@ -1,100 +1,89 @@
-.header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 10px 20px;
-    background-color: #ffffff;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+/* General header styling */
+header {
+    padding: 10px 0;
+    border-bottom: 1px solid #eaeaea;
 }
 
+/* Logo styling */
 .logo img {
-    width: 120px;
+    width: 100px; /* Adjust size as needed */
 }
 
-.nav-links {
-    display: flex;
-    align-items: center;
-    gap: 40px;
-    margin-left: auto;
+/* Navigation styling */
+.navbar-nav {
+    gap: 20px; /* Space between nav items */
 }
 
-.nav-links a {
+.nav-link {
     text-decoration: none;
-    color: #000;
-    font-weight: bold;
-    font-size: 1.1rem;
+    color: #333;
+    font-weight: 500;
+    padding: 0 15px; /* Add horizontal padding for more spacing */
+    transition: color 0.3s ease-in-out;
 }
 
-.header-right {
-    display: flex;
-    align-items: center;
-    gap: 30px;
+.nav-link:hover {
+    color: #007bff; /* Change color on hover */
 }
 
-.search-container {
-    display: flex;
-    align-items: center;
-    background-color: #f5f5f5;
-    padding: 5px 10px;
-    border-radius: 20px;
-}
-
-.search-container input {
-    border: none;
-    background: none;
-    outline: none;
-    padding: 5px;
-}
-
-.search-button {
-    border: none;
-    background: none;
-    cursor: pointer;
-}
-
-.user-actions a {
-    text-decoration: none;
-    color: #000;
-    margin: 0 5px;
-}
-
-.cart {
-    display: flex;
-    align-items: center;
-}
-
-.cart-button {
-    border: none;
-    background: none;
-    cursor: pointer;
-    margin-left: 10px;
-}
-
-/* Style for the search bar */
+/* Search bar styling */
 .search-bar {
     display: flex;
     align-items: center;
-    background-color: #f2f2f2;
-    border-radius: 25px;
-    padding: 5px;
+    margin-right: 20px; /* Space between search bar and other elements */
 }
 
 .search-bar input[type="text"] {
-    border: none;
+    border: 1px solid #ccc;
+    padding: 5px 10px;
+    border-radius: 20px 0 0 20px;
     outline: none;
-    background: transparent;
-    padding: 10px;
-    flex-grow: 1;
 }
 
 .search-bar button {
-    border: none;
-    background: none;
+    border: 1px solid #ccc;
+    border-left: none;
+    padding: 5px 10px;
+    border-radius: 0 20px 20px 0;
+    background-color: #f8f9fa;
     cursor: pointer;
-    color: #333;
-    padding: 10px;
 }
 
-.search-bar button i {
-    font-size: 18px;
+.search-bar button:hover {
+    background-color: #e2e6ea;
+}
+
+/* Shopping cart styling */
+.shopping-cart {
+    margin-left: 20px;
+}
+
+.basket-total {
+    font-size: 0.9rem;
+    color: #333;
+}
+
+/* Login/Register Styling */
+.header-right a {
+    text-decoration: none;
+    margin-right: 15px;
+    color: #007bff;
+}
+
+.header-right a:hover {
+    text-decoration: underline;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .navbar-nav {
+        gap: 10px;
+    }
+
+    .header-right {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+        gap: 10px;
+    }
 }
