@@ -8,9 +8,11 @@
 }
 
 /* General header styling */
-/* Header Styles */
+.header-title,
+.logo-text {
+    font-family: 'Sour Gummy', cursive;
+}
 
-/* Set header background and link styles */
 header {
     background-color: var(--dark-burgundy); /* Dark burgundy background */
     padding: 1rem 0; /* Add some vertical padding for spacing */
@@ -24,6 +26,15 @@ header nav .nav-link {
 
 header nav .nav-link:hover {
     color: var(--warm-pink); /* #f48188, slight hover effect */
+}
+
+.navbar-nav .nav-link {
+    font-family: 'Mitr', sans-serif;
+}
+
+/* Buttons */
+.btn {
+    font-family: 'Quicksand', sans-serif;
 }
 
 /* Search bar styles */
@@ -69,6 +80,11 @@ header nav .nav-link:hover {
 
 
 /* General Page Styling */
+
+body {
+    font-family: 'Mitr', sans-serif;
+}
+
 html, body {
     height: 100%;
     margin: 0;
@@ -88,6 +104,10 @@ html, body {
 footer {
     background-color: var(--light-gray); /* Matches with the rest of the page */
     padding: 2rem 0; /* Vertical padding for spacious look */
+}
+
+.footer {
+    font-family: 'Quicksand', sans-serif;
 }
 
 /* Text color in footer */
