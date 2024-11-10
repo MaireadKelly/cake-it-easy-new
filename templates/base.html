@@ -20,14 +20,21 @@
     {% endblock %}
 </head>
 <body>
+    <header>
     {% include 'includes/header.html' %}
+    </header>
     
-    <main role="main" class="container">
-        {% block content %}
-        <!-- Page-specific content goes here -->
-        {% endblock %}
-    </main>
+    <!-- Main content with flex to push footer down -->
+     <div id="content">
+        <main role="main" class="container">
+            {% block content %}
+            <!-- Page-specific content goes here -->
+            {% endblock %}
+        </main>
+    </div>
     
+    <footer>
     {% include 'includes/footer.html' %}
+    </footer>
 </body>
 </html>

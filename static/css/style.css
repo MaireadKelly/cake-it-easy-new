@@ -1,78 +1,124 @@
+:root {
+    --dark-burgundy: #8e3b46;
+    --gray: #7f7f7f;
+    --light-gray: #f5f7f9;
+    --peach: #f3a285;
+    --warm-yellow: #e2ab64;
+    --soft-pink: #F48188;
+}
+
 /* General header styling */
+/* Header Styles */
+
+/* Set header background and link styles */
 header {
-    padding: 10px 0;
-    border-bottom: 1px solid #eaeaea;
+    background-color: var(--dark-burgundy); /* Dark burgundy background */
+    padding: 1rem 0; /* Add some vertical padding for spacing */
 }
 
-/* Logo styling */
-.logo img {
-    width: 100px; /* Adjust size as needed */
+/* Update navigation links for better contrast */
+header nav .nav-link {
+    color: var(--light-gray); /* #f5f7f9 */
+    font-weight: 500; /* Make text a bit more prominent */
 }
 
-/* Navigation styling */
-.navbar-nav {
-    gap: 20px; /* Space between nav items */
+header nav .nav-link:hover {
+    color: var(--warm-pink); /* #f48188, slight hover effect */
 }
 
-.nav-link {
-    text-decoration: none;
-    color: #333;
-    font-weight: 500;
-    padding: 0 15px; /* Add horizontal padding for more spacing */
-    transition: color 0.3s ease-in-out;
-}
-
-.nav-link:hover {
-    color: #007bff; /* Change color on hover */
-}
-
-/* Search bar styling */
+/* Search bar styles */
 .search-bar {
-    display: flex;
-    align-items: center;
-    margin-right: 20px; /* Space between search bar and other elements */
+    background-color: var(--light-gray); /* Make search input lighter for visibility */
+    border-radius: 1.5rem; /* Add rounded corners for a soft look */
+    padding: 0.4rem 1rem;
+    margin-right: 1rem; /* Adjust space on the right */
 }
 
-.search-bar input[type="text"] {
-    border: 1px solid #ccc;
-    padding: 5px 10px;
-    border-radius: 20px 0 0 20px;
+.search-bar input {
+    border: none;
     outline: none;
+    background: transparent; /* Inherit from search bar background */
+    width: 100%;
+    font-size: 0.9rem;
+    color: var(--dark-gray); /* Ensure input text is readable */
 }
 
 .search-bar button {
-    border: 1px solid #ccc;
-    border-left: none;
-    padding: 5px 10px;
-    border-radius: 0 20px 20px 0;
-    background-color: #f8f9fa;
+    background: transparent;
+    border: none;
+    color: var(--warm-pink); /* Set color of the magnifying glass icon */
     cursor: pointer;
 }
 
-.search-bar button:hover {
-    background-color: #e2e6ea;
+/* Login and Register buttons */
+.header-actions a {
+    color: var(--light-gray); /* #f5f7f9, for better visibility */
+    margin-left: 0.75rem;
 }
 
-/* Shopping cart styling */
-.shopping-cart {
-    margin-left: 20px;
+.header-actions a:hover {
+    color: var(--warm-yellow); /* #e2ab64 */
 }
 
-.basket-total {
-    font-size: 0.9rem;
-    color: #333;
+/* Shopping Cart */
+.shopping-cart .basket-total {
+    color: var(--warm-yellow);
+    font-size: 0.95rem;
+    font-weight: bold;
 }
 
-/* Login/Register Styling */
-.header-right a {
+
+/* General Page Styling */
+html, body {
+    height: 100%;
+    margin: 0;
+}
+
+/* Main container to grow and push footer down */
+#content {
+    min-height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Footer stays at the bottom */
+/* Footer Styles */
+
+/* General footer styling */
+footer {
+    background-color: var(--light-gray); /* Matches with the rest of the page */
+    padding: 2rem 0; /* Vertical padding for spacious look */
+}
+
+/* Text color in footer */
+footer .text-uppercase {
+    color: var(--dark-gray); /* #7f7f7f, for good visibility */
+    font-weight: bold;
+}
+
+footer a {
+    color: var(--warm-pink); /* #f3a285, subtle color for links */
     text-decoration: none;
-    margin-right: 15px;
-    color: #007bff;
 }
 
-.header-right a:hover {
-    text-decoration: underline;
+footer a:hover {
+    color: var(--warm-yellow); /* #e2ab64, adds a hover effect */
 }
+
+/* Footer buttons (e.g., Subscribe) */
+footer .btn-primary {
+    background-color: var(--warm-yellow); /* Set subscribe button color */
+    border: none;
+    font-weight: bold;
+    color: var(--light-gray); /* Text color for contrast */
+}
+
+footer .btn-primary:hover {
+    background-color: var(--warm-pink); /* Add a hover effect */
+    color: var(--light-gray);
+}
+
+
 
 /* Responsive Adjustments */
 @media (max-width: 768px) {
@@ -87,3 +133,4 @@ header {
         gap: 10px;
     }
 }
+ 
