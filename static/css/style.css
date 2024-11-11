@@ -31,16 +31,37 @@ header {
     font-family: 'Sour Gummy', cursive;
 }
 
+.header-right {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    flex: 1;
+    justify-content: flex-end;
+    max-width: 30%;
+}
+
+header .d-flex {
+    justify-content: space-between;
+    flex-wrap: wrap;  /* Allows items to wrap on smaller screens */
+    align-items: center;
+    width: 100%;
+}
+
 /* Logo Centering */
 .logo {
-    flex-grow: 1;
+    flex: 0 1 auto;
     display: flex;
     justify-content: center;
+    max-width: 150px;
 }
 
 /* Navigation Links */
 .navbar-nav {
+    display: flex;
     gap: 1.5rem; /* Space between nav links */
+    align-items: center;
+    flex: 1; /* Allows it to take up available space on the left */
+    max-width: 30%;
 }
 
 .nav-link {
@@ -67,7 +88,9 @@ header {
     border-radius: 1.5rem;
     padding: 0.4rem 1rem;
     margin-right: 1rem;
-    max-width: 200px; /* New width */
+    max-width: 200px; 
+    display: flex;
+    align-items: center;
 }
 
 .search-bar input {
@@ -169,4 +192,15 @@ footer .btn-primary:hover {
     .navbar-toggler[aria-expanded="true"] + .collapse.navbar-collapse {
         display: block;
     }
+
+    .logo {
+        order: -1; /* Move Logo to the top on smaller screens */
+    }
 }
+
+
+/* Temporary background colors for testing layout */
+.navbar-nav { background-color: rgba(255, 0, 0, 0.2); } /* Light red */
+.logo { background-color: rgba(0, 255, 0, 0.2); } /* Light green */
+.header-right { background-color: rgba(0, 0, 255, 0.2); } /* Light blue */
+.search-bar { background-color: rgba(255, 255, 0, 0.2); } /* Light yellow */
