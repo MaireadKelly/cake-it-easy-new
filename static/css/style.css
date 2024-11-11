@@ -1,4 +1,5 @@
 :root {
+    /* Colors */
     --dark-burgundy: #8e3b46;
     --gray: #7f7f7f;
     --light-gray: #f5f7f9;
@@ -7,47 +8,47 @@
     --soft-pink: #F48188;
 }
 
-/* ====== General Styling ====== */
-
+/* General Styling */
 body, html {
     height: 100%;
     margin: 0;
     font-family: 'Mitr', sans-serif;
 }
 
-/* Main container to grow and push footer down */
 #content {
     min-height: 100%;
     display: flex;
     flex-direction: column;
 }
 
-/* ====== Header Styling ====== */
-
-.header-title,
-.logo-text {
-    font-family: 'Sour Gummy', cursive;
-}
-
+/* Header Styling */
 header {
     background-color: var(--dark-burgundy);
     padding: 1rem 0;
 }
 
-/* Logo centering */
+.header-title, .logo-text {
+    font-family: 'Sour Gummy', cursive;
+}
+
+/* Logo Centering */
 .logo {
     flex-grow: 1;
     display: flex;
     justify-content: center;
 }
 
-/* Navigation links */
-header nav .nav-link {
-    color: var(--light-gray);
+/* Navigation Links */
+.navbar-nav {
+    gap: 1.5rem; /* Space between nav links */
+}
+
+.nav-link {
+    color: var(--light-gray) !important;
     font-weight: 500;
 }
 
-header nav .nav-link:hover {
+.nav-link:hover {
     color: var(--soft-pink);
 }
 
@@ -55,23 +56,18 @@ header nav .nav-link:hover {
     font-family: 'Mitr', sans-serif;
 }
 
-/* Space between navigation links */
-.navbar-nav li {
-    margin-right: 1rem;
-}
-
 /* Buttons */
 .btn {
     font-family: 'Quicksand', sans-serif;
 }
 
-/* ====== Search Bar Styling ====== */
-
+/* Search Bar Styling */
 .search-bar {
     background-color: var(--light-gray);
     border-radius: 1.5rem;
     padding: 0.4rem 1rem;
     margin-right: 1rem;
+    max-width: 200px; /* New width */
 }
 
 .search-bar input {
@@ -91,8 +87,7 @@ header nav .nav-link:hover {
     padding: 0.4rem;
 }
 
-/* ====== Login/Register Links Styling ====== */
-
+/* Login/Register Links */
 .header-actions a {
     color: var(--light-gray);
     margin-left: 0.75rem;
@@ -102,16 +97,14 @@ header nav .nav-link:hover {
     color: var(--warm-yellow);
 }
 
-/* ====== Shopping Cart Styling ====== */
-
+/* Shopping Cart */
 .shopping-cart .basket-total {
     color: var(--warm-yellow);
     font-size: 0.95rem;
     font-weight: bold;
 }
 
-/* ====== Footer Styling ====== */
-
+/* Footer Styling */
 footer {
     background-color: var(--light-gray);
     padding: 2rem 0;
@@ -147,8 +140,7 @@ footer .btn-primary:hover {
     color: var(--light-gray);
 }
 
-/* ====== Responsive Adjustments ====== */
-
+/* Responsive Adjustments */
 @media (max-width: 768px) {
     .navbar-nav {
         flex-direction: column;
@@ -163,7 +155,7 @@ footer .btn-primary:hover {
     }
 
     .search-bar {
-        max-width: 150px;
+        max-width: 150px; /* Adjust max-width for smaller screens */
     }
 
     .navbar-toggler {
