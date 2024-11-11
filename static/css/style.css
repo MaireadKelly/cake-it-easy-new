@@ -7,87 +7,12 @@
     --soft-pink: #F48188;
 }
 
-/* General header styling */
-.header-title,
-.logo-text {
-    font-family: 'Sour Gummy', cursive;
-}
+/* ====== General Styling ====== */
 
-header {
-    background-color: var(--dark-burgundy); /* Dark burgundy background */
-    padding: 1rem 0; /* Add some vertical padding for spacing */
-}
-
-/* Update navigation links for better contrast */
-header nav .nav-link {
-    color: var(--light-gray); /* #f5f7f9 */
-    font-weight: 500; /* Make text a bit more prominent */
-}
-
-header nav .nav-link:hover {
-    color: var(--warm-pink); /* #f48188, slight hover effect */
-}
-
-.navbar-nav .nav-link {
-    font-family: 'Mitr', sans-serif;
-}
-
-/* Buttons */
-.btn {
-    font-family: 'Quicksand', sans-serif;
-}
-
-/* Search bar styles */
-.search-bar {
-    background-color: var(--light-gray); /* Make search input lighter for visibility */
-    border-radius: 1.5rem; /* Add rounded corners for a soft look */
-    padding: 0.4rem 1rem;
-    margin-right: 1rem; /* Adjust space on the right */
-}
-
-.search-bar input {
-    border: none;
-    outline: none;
-    background: transparent; /* Inherit from search bar background */
-    width: 100%;
-    font-size: 0.9rem;
-    color: var(--dark-gray); /* Ensure input text is readable */
-}
-
-.search-bar button {
-    background: transparent;
-    border: none;
-    color: var(--warm-pink); /* Set color of the magnifying glass icon */
-    cursor: pointer;
-}
-
-/* Login and Register buttons */
-.header-actions a {
-    color: var(--light-gray); /* #f5f7f9, for better visibility */
-    margin-left: 0.75rem;
-}
-
-.header-actions a:hover {
-    color: var(--warm-yellow); /* #e2ab64 */
-}
-
-/* Shopping Cart */
-.shopping-cart .basket-total {
-    color: var(--warm-yellow);
-    font-size: 0.95rem;
-    font-weight: bold;
-}
-
-
-/* General Page Styling */
-
-body {
-    font-family: 'Mitr', sans-serif;
-}
-
-html, body {
+body, html {
     height: 100%;
     margin: 0;
+    font-family: 'Mitr', sans-serif;
 }
 
 /* Main container to grow and push footer down */
@@ -97,52 +22,136 @@ html, body {
     flex-direction: column;
 }
 
-/* Footer stays at the bottom */
-/* Footer Styles */
+/* ====== Header Styling ====== */
 
-/* General footer styling */
+.header-title,
+.logo-text {
+    font-family: 'Sour Gummy', cursive;
+}
+
+header {
+    background-color: var(--dark-burgundy);
+    padding: 1rem 0;
+}
+
+/* Logo centering */
+.logo {
+    flex-grow: 1;
+    display: flex;
+    justify-content: center;
+}
+
+/* Navigation links */
+header nav .nav-link {
+    color: var(--light-gray);
+    font-weight: 500;
+}
+
+header nav .nav-link:hover {
+    color: var(--soft-pink);
+}
+
+.navbar-nav .nav-link {
+    font-family: 'Mitr', sans-serif;
+}
+
+/* Space between navigation links */
+.navbar-nav li {
+    margin-right: 1rem;
+}
+
+/* Buttons */
+.btn {
+    font-family: 'Quicksand', sans-serif;
+}
+
+/* ====== Search Bar Styling ====== */
+
+.search-bar {
+    background-color: var(--light-gray);
+    border-radius: 1.5rem;
+    padding: 0.4rem 1rem;
+    margin-right: 1rem;
+}
+
+.search-bar input {
+    border: none;
+    outline: none;
+    background: transparent;
+    width: 100%;
+    font-size: 0.9rem;
+    color: var(--dark-gray);
+}
+
+.search-bar button {
+    background: transparent;
+    border: none;
+    color: var(--soft-pink);
+    cursor: pointer;
+    padding: 0.4rem;
+}
+
+/* ====== Login/Register Links Styling ====== */
+
+.header-actions a {
+    color: var(--light-gray);
+    margin-left: 0.75rem;
+}
+
+.header-actions a:hover {
+    color: var(--warm-yellow);
+}
+
+/* ====== Shopping Cart Styling ====== */
+
+.shopping-cart .basket-total {
+    color: var(--warm-yellow);
+    font-size: 0.95rem;
+    font-weight: bold;
+}
+
+/* ====== Footer Styling ====== */
+
 footer {
-    background-color: var(--light-gray); /* Matches with the rest of the page */
-    padding: 2rem 0; /* Vertical padding for spacious look */
+    background-color: var(--light-gray);
+    padding: 2rem 0;
 }
 
 .footer {
     font-family: 'Quicksand', sans-serif;
 }
 
-/* Text color in footer */
 footer .text-uppercase {
-    color: var(--dark-gray); /* #7f7f7f, for good visibility */
+    color: var(--dark-gray);
     font-weight: bold;
 }
 
 footer a {
-    color: var(--warm-pink); /* #f3a285, subtle color for links */
+    color: var(--soft-pink);
     text-decoration: none;
 }
 
 footer a:hover {
-    color: var(--warm-yellow); /* #e2ab64, adds a hover effect */
+    color: var(--warm-yellow);
 }
 
-/* Footer buttons (e.g., Subscribe) */
 footer .btn-primary {
-    background-color: var(--warm-yellow); /* Set subscribe button color */
+    background-color: var(--warm-yellow);
     border: none;
     font-weight: bold;
-    color: var(--light-gray); /* Text color for contrast */
-}
-
-footer .btn-primary:hover {
-    background-color: var(--warm-pink); /* Add a hover effect */
     color: var(--light-gray);
 }
 
+footer .btn-primary:hover {
+    background-color: var(--soft-pink);
+    color: var(--light-gray);
+}
 
+/* ====== Responsive Adjustments ====== */
 
-/* Responsive Adjustments */
 @media (max-width: 768px) {
     .navbar-nav {
+        flex-direction: column;
         gap: 10px;
     }
 
@@ -152,5 +161,20 @@ footer .btn-primary:hover {
         align-items: flex-end;
         gap: 10px;
     }
+
+    .search-bar {
+        max-width: 150px;
+    }
+
+    .navbar-toggler {
+        display: inline-block;
+    }
+
+    .collapse.navbar-collapse {
+        display: none;
+    }
+
+    .navbar-toggler[aria-expanded="true"] + .collapse.navbar-collapse {
+        display: block;
+    }
 }
- 
