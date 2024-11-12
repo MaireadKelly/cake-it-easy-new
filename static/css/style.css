@@ -35,14 +35,12 @@ header {
     display: flex;
     align-items: center;
     gap: 1rem;
-    flex: 1;
-    justify-content: flex-end;
-    max-width: 30%;
+    flex: 0 1 auto;
+    
 }
 
 header .d-flex {
     justify-content: space-between;
-    flex-wrap: wrap;  /* Allows items to wrap on smaller screens */
     align-items: center;
     width: 100%;
 }
@@ -50,8 +48,6 @@ header .d-flex {
 /* Logo Centering */
 .logo {
     flex: 0 1 auto;
-    display: flex;
-    justify-content: center;
     max-width: 150px;
 }
 
@@ -59,9 +55,8 @@ header .d-flex {
 .navbar-nav {
     display: flex;
     gap: 1.5rem; /* Space between nav links */
-    align-items: center;
-    flex: 1; /* Allows it to take up available space on the left */
-    max-width: 30%;
+    flex: 1;
+    justify-content: center;
 }
 
 .nav-link {
@@ -84,13 +79,12 @@ header .d-flex {
 
 /* Search Bar Styling */
 .search-bar {
+    display: flex;
+    align-items: center;
     background-color: var(--light-gray);
     border-radius: 1.5rem;
     padding: 0.4rem 1rem;
-    margin-right: 1rem;
-    max-width: 200px; 
-    display: flex;
-    align-items: center;
+    max-width: 200px;
 }
 
 .search-bar input {
@@ -178,7 +172,7 @@ footer .btn-primary:hover {
     }
 
     .search-bar {
-        max-width: 150px; /* Adjust max-width for smaller screens */
+        max-width: 100%; /*Full width on smaller screens */
     }
 
     .navbar-toggler {
@@ -197,10 +191,11 @@ footer .btn-primary:hover {
         order: -1; /* Move Logo to the top on smaller screens */
     }
 }
-
+/* 
 
 /* Temporary background colors for testing layout */
-.navbar-nav { background-color: rgba(255, 0, 0, 0.2); } /* Light red */
-.logo { background-color: rgba(0, 255, 0, 0.2); } /* Light green */
-.header-right { background-color: rgba(0, 0, 255, 0.2); } /* Light blue */
-.search-bar { background-color: rgba(255, 255, 0, 0.2); } /* Light yellow */
+/*.navbar-nav { background-color: rgba(255, 0, 0, 0.2); } /* Light red */
+/*.logo { background-color: rgba(0, 255, 0, 0.2); } /* Light green */
+/*.header-right { background-color: rgba(0, 0, 255, 0.2); } /* Light blue */
+/*.search-bar { background-color: rgba(255, 255, 0, 0.2); } /*Light yellow */
+
