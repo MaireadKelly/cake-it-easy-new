@@ -1,1 +1,1 @@
-web: gunicorn cake_it_easy_new.wsgi
+web: gunicorn cake_it_easy.wsgi

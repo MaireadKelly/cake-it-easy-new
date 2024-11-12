@@ -18,8 +18,11 @@ import cloudinary.api
 from dotenv import load_dotenv
 import django_heroku
 import dj_database_url
+import environ
 
 load_dotenv()
+env = environ.Env()
+environ.Env.read_env()
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -44,10 +47,7 @@ print("SECRET_KEY:", SECRET_KEY)  # Remove or comment out in production
 
 ALLOWED_HOSTS = [
     "8000-maireadkell-cakeiteasyn-o1ilbiiz4iv.ws.codeinstitute-ide.net",
-    ".herokuapp.com",
-    "localhost",
-    "127.0.0.1",
-]
+    ".herokuapp.com"]
 
 # Application definition
 
@@ -127,7 +127,14 @@ WSGI_APPLICATION = "cake_it_easy.wsgi.application"
 # https://docs.djangoproject.com/en/5.1/ref/settings/#databases
 
 DATABASES = {
-    "default": {
+    "default": dj_database_url.config(
+        default="sqlite:///db.sqlite3"
+    )
+}
+
+# Additional configuration for PostgreSQL when DATABASE_URL is not set
+if not DATABASES["default"]:
+    DATABASES["default"] = {
         "ENGINE": "django.db.backends.postgresql",
         "NAME": os.getenv("DB_NAME"),
         "USER": os.getenv("DB_USER"),
@@ -135,15 +142,14 @@ DATABASES = {
         "HOST": os.getenv("DB_HOST"),
         "PORT": os.getenv("DB_PORT", "5432"),
     }
-}
 # Existing DATABASES setting
-DATABASES = {"default": dj_database_url.config(default=os.getenv("DATABASE_URL"))}
+# DATABASES = {"default": dj_database_url.config(default=os.getenv("DATABASE_URL"))}
 
-# Adjust if necessary
-DATABASE_URL = os.getenv("DATABASE_URL")
-if DATABASE_URL and DATABASE_URL.startswith("postgres://"):
-    DATABASE_URL = DATABASE_URL.replace("postgres://", "postgresql://", 1)
-DATABASES["default"] = dj_database_url.parse(DATABASE_URL)
+# # Adjust if necessary
+# DATABASE_URL = os.getenv("DATABASE_URL")
+# if DATABASE_URL and DATABASE_URL.startswith("postgres://"):
+#     DATABASE_URL = DATABASE_URL.replace("postgres://", "postgresql://", 1)
+# DATABASES["default"] = dj_database_url.parse(DATABASE_URL)
 
 
 # Password validation
