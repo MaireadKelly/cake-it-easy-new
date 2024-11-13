@@ -121,7 +121,10 @@ WSGI_APPLICATION = "cake_it_easy.wsgi.application"
 
 # Database configuration using environment variables
 DATABASES = {
-    "default": env.db("DATABASE_URL", default="sqlite:///db.sqlite3")
+    'default': {
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+    }
 }
 
 # Password validation
