@@ -15,12 +15,9 @@ from pathlib import Path
 import cloudinary
 import cloudinary.uploader
 import cloudinary.api
-from dotenv import load_dotenv
-import django_heroku
 import dj_database_url
 import environ
 
-load_dotenv()
 env = environ.Env()
 environ.Env.read_env()
 
@@ -39,18 +36,13 @@ DEBUG = (
     os.getenv("DEBUG", "True") == "True"
 )  # Use environment variable with default to True
 
-print("DEBUG:", DEBUG)
-print("ALLOWED_HOSTS:", ALLOWED_HOSTS)
-print("SECRET_KEY:", SECRET_KEY)  # Remove or comment out in production
 
 # ALLOWED_HOSTS = ['8000-maireadkell-cakeiteasyn-o1ilbiiz4iv.ws.codeinstitute-ide.net', ,'.herokuapp.com']
 
-ALLOWED_HOSTS = [
-    "8000-maireadkell-cakeiteasyn-o1ilbiiz4iv.ws.codeinstitute-ide.net",
-    ".herokuapp.com"]
+ALLOWED_HOSTS = ["8000-maireadkell-cakeiteasyn-o1ilbiiz4iv.ws.codeinstitute-ide.net", "your-heroku-app.herokuapp.com"]
+
 
 # Application definition
-
 INSTALLED_APPS = [
     "django.contrib.admin",
     "django.contrib.auth",
@@ -72,6 +64,7 @@ INSTALLED_APPS = [
 CSRF_TRUSTED_ORIGINS = [
     "https://*.codeinstitute-ide.net",
     "https://8000-maireadkell-cakeiteasyn-o1ilbiiz4iv.ws.codeinstitute-ide.net",
+    "https://*.herokuapp.com",
 ]
 
 MIDDLEWARE = [
@@ -126,31 +119,10 @@ WSGI_APPLICATION = "cake_it_easy.wsgi.application"
 # Database
 # https://docs.djangoproject.com/en/5.1/ref/settings/#databases
 
+# Database configuration using environment variables
 DATABASES = {
-    "default": dj_database_url.config(
-        default="sqlite:///db.sqlite3"
-    )
+    "default": env.db("DATABASE_URL", default="sqlite:///db.sqlite3")
 }
-
-# Additional configuration for PostgreSQL when DATABASE_URL is not set
-if not DATABASES["default"]:
-    DATABASES["default"] = {
-        "ENGINE": "django.db.backends.postgresql",
-        "NAME": os.getenv("DB_NAME"),
-        "USER": os.getenv("DB_USER"),
-        "PASSWORD": os.getenv("DB_PASSWORD"),
-        "HOST": os.getenv("DB_HOST"),
-        "PORT": os.getenv("DB_PORT", "5432"),
-    }
-# Existing DATABASES setting
-# DATABASES = {"default": dj_database_url.config(default=os.getenv("DATABASE_URL"))}
-
-# # Adjust if necessary
-# DATABASE_URL = os.getenv("DATABASE_URL")
-# if DATABASE_URL and DATABASE_URL.startswith("postgres://"):
-#     DATABASE_URL = DATABASE_URL.replace("postgres://", "postgresql://", 1)
-# DATABASES["default"] = dj_database_url.parse(DATABASE_URL)
-
 
 # Password validation
 # https://docs.djangoproject.com/en/5.1/ref/settings/#auth-password-validators
