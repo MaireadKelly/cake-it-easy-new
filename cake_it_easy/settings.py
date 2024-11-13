@@ -39,7 +39,7 @@ DEBUG = (
 
 # ALLOWED_HOSTS = ['8000-maireadkell-cakeiteasyn-o1ilbiiz4iv.ws.codeinstitute-ide.net', ,'.herokuapp.com']
 
-ALLOWED_HOSTS = ["8000-maireadkell-cakeiteasyn-o1ilbiiz4iv.ws.codeinstitute-ide.net", "your-heroku-app.herokuapp.com"]
+ALLOWED_HOSTS = ["8000-maireadkell-cakeiteasyn-o1ilbiiz4iv.ws.codeinstitute-ide.net"]
 
 
 # Application definition
