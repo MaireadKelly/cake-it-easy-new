@@ -9,17 +9,18 @@ https://docs.djangoproject.com/en/5.1/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/5.1/ref/settings/
 """
-
+from dotenv import load_dotenv
 import os
 from pathlib import Path
 import cloudinary
 import cloudinary.uploader
 import cloudinary.api
 import dj_database_url
-import environ
+# import environ
 
-env = environ.Env()
-environ.Env.read_env()
+load_dotenv()
+# env = environ.Env()
+# environ.Env.read_env()
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -39,7 +40,7 @@ DEBUG = (
 
 # ALLOWED_HOSTS = ['8000-maireadkell-cakeiteasyn-o1ilbiiz4iv.ws.codeinstitute-ide.net', ,'.herokuapp.com']
 
-ALLOWED_HOSTS = ["8000-maireadkell-cakeiteasyn-o1ilbiiz4iv.ws.codeinstitute-ide.net"]
+ALLOWED_HOSTS = ['8000-maireadkell-cakeiteasyn-rftrc4nwvu4.ws.codeinstitute-ide.net']
 
 
 # Application definition
